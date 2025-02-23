@@ -18,6 +18,8 @@ public class PlayerMovement : MonoBehaviour
 
     public BoolVariable IsAlive;
 
+    public IntVariable Lives;
+
     private Rigidbody2D rigidBody;
     private GroundSpeed groundSpeed;
 
@@ -29,6 +31,7 @@ public class PlayerMovement : MonoBehaviour
         this.rigidBody = this.GetComponent<Rigidbody2D>();
         this.groundSpeed = this.Ground.GetComponent<GroundSpeed>();
         this.IsAlive.SetValue(true);
+        this.Lives.SetValue(3);
     }
 
     private void Update()

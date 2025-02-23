@@ -670,6 +670,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   IsAlive: {fileID: 11400000, guid: c20d387f82c724e65ab56d53ff878c03, type: 2}
+  Lives: {fileID: 11400000, guid: 9346c630c9a953640a0656b6755bcb25, type: 2}
   HeadCollisionEvent:
     m_PersistentCalls:
       m_Calls:
@@ -709,6 +710,23 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 11400000, guid: 9346c630c9a953640a0656b6755bcb25, type: 2}
+        m_TargetAssemblyTypeName: IntVariable, Assembly-CSharp
+        m_MethodName: MinusChange
+        m_Mode: 3
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 1
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  TriggerCandidates:
+  - {fileID: 1785161998}
+  DeadCollisionEvent:
+    m_PersistentCalls:
+      m_Calls:
       - m_Target: {fileID: 11400000, guid: c20d387f82c724e65ab56d53ff878c03, type: 2}
         m_TargetAssemblyTypeName: BoolVariable, Assembly-CSharp
         m_MethodName: SetValue
@@ -721,8 +739,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  TriggerCandidates:
-  - {fileID: 1785161998}
 --- !u!199 &84058181
 ParticleSystemRenderer:
   serializedVersion: 6
@@ -6924,6 +6940,7 @@ MonoBehaviour:
   AccelerationRate: {fileID: 11400000, guid: 96ad599d83898426e820a6aa78f901a3, type: 2}
   DefaultSpeed: {fileID: 11400000, guid: 9a35cb89c1e924417ad7761fe70db835, type: 2}
   IsAlive: {fileID: 11400000, guid: c20d387f82c724e65ab56d53ff878c03, type: 2}
+  Lives: {fileID: 11400000, guid: 9346c630c9a953640a0656b6755bcb25, type: 2}
 --- !u!114 &470829358
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -10326,7 +10343,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: febb1ce265eae4432ad9a74859e68754, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  Event: {fileID: 11400000, guid: cffac6960af96469687bb814cbe3ce72, type: 2}
+  Event: {fileID: 11400000, guid: a53088ed4d455e94c947bd74a9430abb, type: 2}
   Response:
     m_PersistentCalls:
       m_Calls:

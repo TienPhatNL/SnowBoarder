@@ -28,4 +28,13 @@ public class IntVariable : ScriptableObject
     {
         Value += amount.Value;
     }
+    public void MinusChange(int amount)
+    {
+        Value -= amount;
+    }
+
+    public void MinusChange(IntVariable amount)
+    {
+        Value -= amount.Value;
+    }
 }
