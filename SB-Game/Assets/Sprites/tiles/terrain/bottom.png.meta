@@ -1,10 +1,10 @@
 fileFormatVersion: 2
-guid: 1a29d8b3b1cf1344991bfe9ae7156b54
+guid: b8e8b6434d4ff3d448de1f3eab0f89c3
 TextureImporter:
   internalIDToNameTable:
   - first:
-      213: 2682881966957164788
-    second: winter-pixel-landscape-retro-2d-game-background-with-snowy-mountains-and-forest-snowy-landscape-with-frozen-lake-winter-panorama-vector_0
+      213: -3742592120836699101
+    second: bottom_0
   externalObjects: {}
   serializedVersion: 13
   mipmaps:
@@ -113,13 +113,13 @@ TextureImporter:
     serializedVersion: 2
     sprites:
     - serializedVersion: 2
-      name: winter-pixel-landscape-retro-2d-game-background-with-snowy-mountains-and-forest-snowy-landscape-with-frozen-lake-winter-panorama-vector_0
+      name: bottom_0
       rect:
         serializedVersion: 2
         x: 0
-        y: 0
-        width: 1838
-        height: 980
+        y: 1
+        width: 256
+        height: 255
       alignment: 0
       pivot: {x: 0, y: 0}
       border: {x: 0, y: 0, z: 0, w: 0}
@@ -128,8 +128,8 @@ TextureImporter:
       physicsShape: []
       tessellationDetail: -1
       bones: []
-      spriteID: 4f878c63fe28b3520800000000000000
-      internalID: 2682881966957164788
+      spriteID: 32c4a529b44af0cc0800000000000000
+      internalID: -3742592120836699101
       vertices: []
       indices: 
       edges: []
@@ -147,8 +147,7 @@ TextureImporter:
     secondaryTextures: []
     spriteCustomMetadata:
       entries: []
-    nameFileIdTable:
-      winter-pixel-landscape-retro-2d-game-background-with-snowy-mountains-and-forest-snowy-landscape-with-frozen-lake-winter-panorama-vector_0: 2682881966957164788
+    nameFileIdTable: {}
   mipmapLimitGroupName: 
   pSDRemoveMatte: 0
   userData: 
