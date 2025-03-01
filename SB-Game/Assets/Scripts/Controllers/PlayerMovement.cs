@@ -20,6 +20,9 @@ public class PlayerMovement : MonoBehaviour
 
     public IntVariable Lives;
 
+    public float flipBonusThreshold = 180f;
+    public int flipBonusScore;
+    public float SpeedMultipleScore;
     private Rigidbody2D rigidBody;
     private GroundSpeed groundSpeed;
 
@@ -40,6 +43,9 @@ public class PlayerMovement : MonoBehaviour
             this.inputVertical = Input.GetAxisRaw("Vertical");
             this.inputHorizontal = Input.GetAxisRaw("Horizontal");
         }
+
+        HandleFlipBonus();
+        HandleSpeedBonus();
     }
 
     private void FixedUpdate()
@@ -119,5 +125,29 @@ public class PlayerMovement : MonoBehaviour
             ? defaultSpeed
             : currentSpeed - speedDifferential
         ;
+    }
+
+    private void HandleFlipBonus()
+    {
+        // Check if player flips based on rotation (Z-axis rotation)
+        float rotationZ = transform.eulerAngles.z;
+
+        if (rotationZ > flipBonusThreshold && rotationZ < 360 - flipBonusThreshold)
+        {            
+            ScoreManager.instance.AddScore(flipBonusScore);
+        }
+    }
+
+    private void HandleSpeedBonus()
+    {
+        // Award points based on player speed
+        if (rigidBody != null)
+        {
+            float speed = rigidBody.linearVelocity.magnitude;
+            if (speed > 5f) // Example threshold for speed bonus
+            {
+                ScoreManager.instance.AddScore(Mathf.FloorToInt(speed * SpeedMultipleScore)); // Add score based on speed
+            }
+        }
     }
 }

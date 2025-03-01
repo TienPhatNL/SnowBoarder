@@ -17,6 +17,8 @@ public class HeadTrigger : MonoBehaviour
     [Tooltip("GameObjects to interact with.")]
     public GameObject[] TriggerCandidates;
 
+    public PlayerRespawn playerRespawn;
+
     public UnityEvent DeadCollisionEvent;
 
     private HashSet<GameObject> triggerCandidates;
@@ -29,14 +31,19 @@ public class HeadTrigger : MonoBehaviour
 
     private void OnTriggerEnter2D(Collider2D other)
     {
-        if (this.triggerCandidates.Contains(other.gameObject) && this.IsAlive.Value)
+        if (this.IsAlive.Value)
         {
             this.HeadCollisionEvent.Invoke();
-        }
-
-        if (this.Lives.Value == 0)
-        {
-            this.DeadCollisionEvent.Invoke();
+            if (this.Lives.Value > 0)
+            {
+                Vector3 deathPosition = transform.position;
+                playerRespawn.SetDeathPosition(deathPosition); // Pass the death position
+                playerRespawn.TriggerRespawn();
+            }
+            else
+            {
+                this.DeadCollisionEvent.Invoke();
+            }
         }
 
         UpdateLivesUI(); // Update UI after lives change
