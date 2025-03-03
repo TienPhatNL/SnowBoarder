@@ -26,7 +26,8 @@ public class GameOverOverlay : MonoBehaviour
 
     // Reload the current scene (Restart Game)
     private void ReplayGame()
-    {
+    {        
+
         SceneManager.LoadScene(SceneManager.GetActiveScene().buildIndex);
     }
 

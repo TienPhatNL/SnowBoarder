@@ -1,22 +1,22 @@
 ﻿using TMPro;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
 public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager instance;
-    public int score = 0;
-    public int highScore = 0;
-    public TextMeshProUGUI scoreText; // Kéo Text từ Canvas vào đây trong Inspector
+    private int score = 0;
+    private TextMeshProUGUI scoreText; // Kéo Text từ Canvas vào đây trong Inspector
 
     private void Awake()
     {
         if (instance == null)
         {
-            instance = this;            
+            instance = this;
         }
 
-        DontDestroyOnLoad(gameObject);
+        scoreText = GameObject.Find("Score").GetComponent<TextMeshProUGUI>();
     }
 
     public void AddScore(int points)
@@ -25,24 +25,11 @@ public class ScoreManager : MonoBehaviour
         UpdateScoreText();
     }
 
-    public void ResetScore()
-    {
-        score = 0;
-    }
-
     private void UpdateScoreText()
     {
         if (scoreText != null)
         {
             scoreText.text = "Score: " + score;
-        }
-    }
-
-    public void UpdateHighScore()
-    {
-        if (score > highScore)
-        {
-            highScore = score;
         }
     }
 }
