@@ -62,7 +62,7 @@ public class PlayerMovement : MonoBehaviour
             this.groundSpeed.SetGroundSpeed(this.getUpdatedSpeed(this.inputVertical, this.AccelerationRate.Value, this.groundSpeed.GetGroundSpeed(), this.MinSpeed.Value, this.MaxSpeed.Value));
 
         #if UNITY_EDITOR
-            Debug.Log(string.Format("PlayerMovement.getUpdatedSpeed user input speed change [from: {0}] [to: {1}]", oldSpeed, this.groundSpeed.GetGroundSpeed()));
+            //Debug.Log(string.Format("PlayerMovement.getUpdatedSpeed user input speed change [from: {0}] [to: {1}]", oldSpeed, this.groundSpeed.GetGroundSpeed()));
         #endif
         }
 
@@ -72,7 +72,7 @@ public class PlayerMovement : MonoBehaviour
             float oldSpeed = this.groundSpeed.GetGroundSpeed();
             this.groundSpeed.SetGroundSpeed(getNormalizedSpeed(this.groundSpeed.GetGroundSpeed(), defaultSpeed, this.SpeedNormalizationRate.Value));
         #if UNITY_EDITOR
-            Debug.Log(string.Format("PlayerMovement.getNormalizedSpeed [from: {0}] [to: {1}]", oldSpeed, this.groundSpeed.GetGroundSpeed()));
+            //Debug.Log(string.Format("PlayerMovement.getNormalizedSpeed [from: {0}] [to: {1}]", oldSpeed, this.groundSpeed.GetGroundSpeed()));
         #endif
         }
 

@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class ScoreManager : MonoBehaviour
 {
     public static ScoreManager instance;
-    private int score = 0;
+    public int score = 0;
     private TextMeshProUGUI scoreText; // Kéo Text từ Canvas vào đây trong Inspector
 
     private void Awake()
@@ -17,6 +17,7 @@ public class ScoreManager : MonoBehaviour
         }
 
         scoreText = GameObject.Find("Score").GetComponent<TextMeshProUGUI>();
+        //DontDestroyOnLoad(instance);
     }
 
     public void AddScore(int points)
@@ -32,4 +33,11 @@ public class ScoreManager : MonoBehaviour
             scoreText.text = "Score: " + score;
         }
     }
+
+    //public void ResetScore()
+    //{
+    //    score = 0;
+    //    scoreText = GameObject.Find("Score").GetComponent<TextMeshProUGUI>();
+    //    UpdateScoreText();
+    //}
 }

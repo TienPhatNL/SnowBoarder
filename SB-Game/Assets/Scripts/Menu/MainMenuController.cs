@@ -1,10 +1,10 @@
 using UnityEngine;
-using UnityEngine.SceneManagement;
 
 public class MainMenuController : MonoBehaviour
 {
     public GameObject optionsOverlay; // Reference to the Options Overlay panel
-    public GameObject levelsOverlay; // Reference to the Levels Overlay panel
+    public GameObject levelsOverlay;
+    public GameObject highScoreOverlay;
 
     // Called when the "Play" button is clicked
     public void OnPlayButtonClicked()
@@ -31,6 +31,19 @@ public class MainMenuController : MonoBehaviour
         else
         {
             Debug.LogWarning("Options Overlay is not assigned in the MainMenuController.");
+        }
+    }
+
+    public void OnHighScoreButtonClicked()
+    {
+        // Show the options overlay
+        if (highScoreOverlay != null)
+        {
+            highScoreOverlay.SetActive(true);
+        }
+        else
+        {
+            Debug.LogWarning("highScoreOverlay is not assigned in the MainMenuController.");
         }
     }
 
