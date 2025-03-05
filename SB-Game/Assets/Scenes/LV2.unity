@@ -16993,6 +16993,7 @@ MonoBehaviour:
   gameOverPanel: {fileID: 1160298524}
   replayButton: {fileID: 2133381360}
   mainMenuButton: {fileID: 1342585984}
+  level: 2
 --- !u!1001 &1638876181
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -9,6 +9,7 @@ public class GameOverOverlay : MonoBehaviour
     [SerializeField] private Button replayButton;
     [SerializeField] private Button mainMenuButton;
     private TextMeshProUGUI scoreEndText;
+    public int level;
 
     private void Awake()
     {
@@ -35,7 +36,15 @@ public class GameOverOverlay : MonoBehaviour
         
         scoreEndText = GameObject.Find("ScoreTxt").GetComponent<TextMeshProUGUI>();
         scoreEndText.text = $"Score: {ScoreManager.instance.score}";
-        HighScoreManager.instance.UpdateHighScore2(ScoreManager.instance.score);
+        if (level == 1) 
+            HighScoreManager.instance.UpdateHighScore1(ScoreManager.instance.score);
+        else if (level == 2)
+            HighScoreManager.instance.UpdateHighScore2(ScoreManager.instance.score);
+        else
+        {
+            HighScoreManager.instance.UpdateHighScore3(ScoreManager.instance.score);
+        }
+        Debug.Log($"{HighScoreManager.instance.highScore1} ; {HighScoreManager.instance.highScore2} ; {HighScoreManager.instance.highScore3}");
     }
 
     // Reload the current scene (Restart Game)
