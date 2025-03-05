@@ -4,9 +4,9 @@ using UnityEngine;
 public class HighScoreManager : MonoBehaviour
 {
     public static HighScoreManager instance;
-    private int highScore1 = 0;
-    private int highScore2 = 0;
-    private int highScore3 = 0;
+    public int highScore1 = 0;
+    public int highScore2 = 0;
+    public int highScore3 = 0;
     private TextMeshProUGUI highScoreText1;
     private TextMeshProUGUI highScoreText2;
     private TextMeshProUGUI highScoreText3;
@@ -45,7 +45,7 @@ public class HighScoreManager : MonoBehaviour
     {
         if (score > highScore2)
         {
-            highScore1 = score;
+            highScore2 = score;
             highScoreText2.text = $"Lv 2: {highScore2}";
         }
     }
@@ -54,7 +54,7 @@ public class HighScoreManager : MonoBehaviour
     {
         if (score > highScore3)
         {
-            highScore1 = score;
+            highScore3 = score;
             highScoreText3.text = $"Lv 3: {highScore3}";
         }
     }
